@@ -1,4 +1,4 @@
-react-flux-cart
+NOW WOW
 ===============
 
-Code for the tutorial by @kenwheeler: Create a Shopping Cart Using React.js and Flux
+App with react flux and stuff
