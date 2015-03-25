@@ -14,7 +14,7 @@ var NowWowActions = {
   addToStats: function(type, update) {
     AppDispatcher.handleAction({
       actionType: NowWowConstants.STATS_ADD,
-      type: type,
+      type: type.name,
       update: update
     })
   },

@@ -4,6 +4,7 @@
   "description": "now wow stats app",
   "main": "js/app.js",
   "dependencies": {
+    "express": "^4.12.3",
     "flux": "^2.0.0",
     "react": "^0.12.0",
     "underscore": "^1.7.0"
@@ -11,8 +12,11 @@
   "devDependencies": {
     "browserify": "~6.2.0",
     "envify": "~3.0.0",
+    "gulp": "^3.8.11",
     "react": "^0.12.0",
     "reactify": "^0.15",
+    "socket.io": "^1.3.5",
+    "socket.io-client": "^1.3.5",
     "watchify": "~2.1.0"
   },
   "scripts": {

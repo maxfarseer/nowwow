@@ -12,6 +12,7 @@ function add(type, update) {
   _things[type] = _.extend({}, _things[type], update)
 }
 
+
 // Remove item from cart
 function removeItem(type) {
   delete _things[type];
@@ -23,16 +24,14 @@ var StatsStore = _.extend({}, EventEmitter.prototype, {
     return _things;
   },
 
-  // Return counts of people, who doing something now
   getStatsTotal: function() {
-    /* TODO
     var total = 0;
-    for(product in _things){
-      if(_things.hasOwnProperty(product)){
-        total += _things[product].price * _things[product].quantity;
-      }
+
+    for (thing in _things) {
+      total += _things[thing].quantity;
     }
-    return total.toFixed(2);*/
+
+    return total;
   },
 
   // Emit Change event

@@ -2,14 +2,16 @@ var React = require('react');
 var StatsStore = require('../stores/StatsStore');
 var ThingStore = require('../stores/ThingStore');
 var FluxThing = require('./FluxThing.react');
-var FluxStats = require('./FluxStats.react'); //cart
+var FluxStats = require('./FluxStats.react');
+
 
 // Method to retrieve state from Stores
 function getCartState() {
   return {
     thing: ThingStore.getThing(),
-    statsItems: StatsStore.getStatsItems()
-    //statsTotal: StatsStore.getStatsTotal() TODO
+    things: ThingStore.getAllThings(),
+    statsItems: StatsStore.getStatsItems(),
+    total: StatsStore.getStatsTotal()
   };
 }
 
@@ -35,10 +37,15 @@ var NowWowApp = React.createClass({
 
   // Render our child components, passing state via props
   render: function() {
+    var results = this.state.things;
   	return (
       <div className="flux-cart-app">
-        <FluxStats things={this.state.statsItems} />
-        <FluxThing thing={this.state.thing} /*cartitems={this.state.cartItems}*/ />
+        <FluxStats things={this.state.statsItems} total={this.state.total} />
+        {results.map(function(result) {
+          return (
+            <FluxThing thing={result} key={result.id} />
+          )
+        })}
       </div>
   	);
   },

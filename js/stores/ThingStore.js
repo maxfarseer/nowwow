@@ -7,6 +7,7 @@ var _thing = {};
 
 function _loadThingsData(data) {
   _thing = data[1];
+  _things = data;
 }
 
 var ThingStore = _.extend({}, EventEmitter.prototype, {
@@ -14,6 +15,10 @@ var ThingStore = _.extend({}, EventEmitter.prototype, {
   // Return Product data
   getThing: function() {
     return _thing;
+  },
+
+  getAllThings: function() {
+    return _things;
   },
 
   // Emit Change event

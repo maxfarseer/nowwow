@@ -1,5 +1,6 @@
 var React = require('react');
-var NowWowActions = require('../actions/NowWowActions');
+//var NowWowActions = require('../actions/NowWowActions');
+var SocketAPI = require('../utils/SocketAPI');
 
 // Flux product view
 var FluxThing = React.createClass({
@@ -8,9 +9,11 @@ var FluxThing = React.createClass({
   addToStats: function(event){
     var thing = this.props.thing;
     var update = {
-      name: this.props.thing.name
+      name: this.props.thing.name,
+      start: new Date()
     }
-    NowWowActions.addToStats(thing, update);
+    //NowWowActions.addToStats(thing, update);
+    SocketAPI.addToStats(thing,update);
   },
 
   // Select product variation via Actions
