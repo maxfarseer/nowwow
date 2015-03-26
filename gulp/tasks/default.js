@@ -1,3 +1,3 @@
 var gulp = require('gulp');
 
-gulp.task('default', ['bundle', 'watch']);
+gulp.task('default', ['bundle', 'sass', 'watch', 'express']);
